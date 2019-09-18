@@ -1,0 +1,7 @@
+<p>main-list works!</p>
+<button (click)="fetchData()">get Data here!</button>
+<ul>
+    <li *ngFor="let p of results$.todos">
+        <strong>{{p.title}}</strong><br />{{p.description}}
+    </li>
+</ul>
