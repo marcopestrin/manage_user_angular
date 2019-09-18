@@ -9,19 +9,14 @@ import { ApiService} from '../api.service';
 })
 export class MainListComponent implements OnInit {
   
-  results$: Object;
+  results$ = {'todos':''};
 
-  constructor(private apiService: ApiService) {
-    console.log("constructor: ",this.results$);
-  }
+  constructor(private apiService: ApiService) {}
 
   fetchData(){
     this.apiService.fetchData().subscribe((data)=>{
       this.results$ = data;
-      console.log(data);
-
     });
-    console.log("---> ",this.results$)
     return this.results$;
   }
 
